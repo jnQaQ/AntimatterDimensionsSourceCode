@@ -1,25 +1,28 @@
 # Antimatter Dimensions
 
-## Run
+## 概述
+我已经通关了两次反物质维度，在游玩的过程中，我感觉到部分阶段游戏节奏过于缓慢，部分挑战需要放置很长时间。同时有些阶段玩了很久进展却进展非常缓慢以至于我中途搁置了很久才捡起来继续游戏。\
+所以我想根据我最近一次的“速通“记录来尝试压缩部分阶段的等待时间，并尝试加快部分阶段前期的游戏节奏。\
+此修改版本在尽可能不破坏游戏平衡的情况下尝试通过提供额外倍数、降低挑战要求等方式来加快游戏节奏。
 
-To run the game locally, you will need to install
-[Node.js](https://nodejs.org/) (LTS suggested).
-
-First, run the following command in your terminal (or command line) while being
-inside the checked out repository:
-
-```
-npm ci
-```
-
-After all the packages are installed, start up the game:
-
-```
-npm run serve
-```
-
-This will make the game served via your localhost, and the playable link will
-be displayed in your terminal. The server **doesn't** need to be restarted
-after you've made changes - just reload the page. The server **can**
-occasionally crash, so check your terminal from time to time and run `serve`
-again if needed.
+## 此版本的调整点
+* 无限之前 - 第一次无限
+  * 1-7维度在完成第一行成就后提供额外倍数（初始12倍，随无限次数减小）
+* 早期无限 - 打破无限
+* 打破无限 - 星系增强升级
+* 星系增强升级 - 复制器
+* 复制器 - 第一次永恒
+* 早期永恒 - 全部永恒里程碑
+* 全部永恒里程碑 - 第一个永恒挑战
+* 第一个永恒挑战 - 永恒挑战 10
+* 永恒挑战 10 - 时间膨胀前
+* 时间膨胀 - 现实之前
+* 早期现实 - 全复兴树
+* 全复兴树 - 全部现实升级
+* cel1
+* cel2
+* cel3
+* cel4
+* cel5
+* cel6
+* cel7

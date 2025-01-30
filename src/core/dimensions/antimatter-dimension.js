@@ -113,6 +113,7 @@ function applyNDMultipliers(mult, tier) {
       .timesEffectsOf(
         InfinityUpgrade.unspentIPMult,
         InfinityUpgrade.unspentIPMult.chargedEffect,
+        Achievement(12),
         Achievement(28),
         Achievement(31),
         Achievement(68),
@@ -120,7 +121,47 @@ function applyNDMultipliers(mult, tier) {
         TimeStudy(234)
       );
   }
+  if (tier === 2) {
+    multiplier = multiplier
+      .timesEffectsOf(
+        Achievement(13),
+      );
+  }
+  if (tier === 3) {
+    multiplier = multiplier
+      .timesEffectsOf(
+        Achievement(14),
+      );
+  }
+  if (tier === 4) {
+    multiplier = multiplier
+      .timesEffectsOf(
+        Achievement(15),
+      );
+  }
+  if (tier === 5) {
+    multiplier = multiplier
+      .timesEffectsOf(
+        Achievement(16),
+      );
+  }
+  if (tier === 6) {
+    multiplier = multiplier
+      .timesEffectsOf(
+        Achievement(17),
+      );
+  }
+  if (tier === 7) {
+    multiplier = multiplier
+      .timesEffectsOf(
+        Achievement(18),
+      );
+  }
   if (tier === 8) {
+    multiplier = multiplier
+      .timesEffectsOf(
+        Achievement(26)
+      );
     multiplier = multiplier.times(Sacrifice.totalBoost);
   }
 
@@ -508,8 +549,8 @@ class AntimatterDimensionState extends DimensionState {
   }
 
   /**
-    * @returns {boolean}
-    */
+   * @returns {boolean}
+   */
   get isAffordable() {
     if (Laitela.continuumActive) return false;
     if (!player.break && this.cost.gt(Decimal.NUMBER_MAX_VALUE)) return false;

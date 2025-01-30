@@ -1,4 +1,5 @@
 import { DC } from "../../constants";
+import {Currency} from "@/core/currency";
 
 export const normalAchievements = [
   {
@@ -6,30 +7,63 @@ export const normalAchievements = [
     name: "You gotta start somewhere",
     description: "Buy a 1st Antimatter Dimension.",
     checkEvent: GAME_EVENT.ACHIEVEMENT_EVENT_OTHER,
+    reward: "You have embarked on a path of no return."
   },
   {
     id: 12,
     name: "100 antimatter is a lot",
     description: "Buy a 2nd Antimatter Dimension.",
     checkEvent: GAME_EVENT.ACHIEVEMENT_EVENT_OTHER,
+    get reward() {
+      return `
+    1st Antimatter Dimensions obtains a multiplier that
+    decreases with an infinite number of increases.
+    `;
+    },
+    effect: () => new Decimal(0.95).pow(Currency.infinitiesTotal.value).times(12).max(1),
+    formatEffect: value => `${formatX(value, 2, 2)}`
   },
   {
     id: 13,
     name: "Half life 3 CONFIRMED",
     description: "Buy a 3rd Antimatter Dimension.",
     checkEvent: GAME_EVENT.ACHIEVEMENT_EVENT_OTHER,
+    get reward() {
+      return `
+    2nd Antimatter Dimensions obtains a multiplier that
+    decreases with an infinite number of increases.
+    `;
+    },
+    effect: () => new Decimal(0.95).pow(Currency.infinitiesTotal.value).times(12).max(1),
+    formatEffect: value => `${formatX(value, 2, 2)}`
   },
   {
     id: 14,
     name: "L4D: Left 4 Dimensions",
     description: "Buy a 4th Antimatter Dimension.",
     checkEvent: GAME_EVENT.ACHIEVEMENT_EVENT_OTHER,
+    get reward() {
+      return `
+    3rd Antimatter Dimensions obtains a multiplier that
+    decreases with an infinite number of increases.
+    `;
+    },
+    effect: () => new Decimal(0.95).pow(Currency.infinitiesTotal.value).times(12).max(1),
+    formatEffect: value => `${formatX(value, 2, 2)}`
   },
   {
     id: 15,
     name: "5 Dimension Antimatter Punch",
     description: "Buy a 5th Antimatter Dimension.",
     checkEvent: GAME_EVENT.ACHIEVEMENT_EVENT_OTHER,
+    get reward() {
+      return `
+    4th Antimatter Dimensions obtains a multiplier that
+    decreases with an infinite number of increases.
+    `;
+    },
+    effect: () => new Decimal(0.95).pow(Currency.infinitiesTotal.value).times(12).max(1),
+    formatEffect: value => `${formatX(value, 2, 2)}`
   },
   {
     id: 16,
@@ -40,12 +74,28 @@ export const normalAchievements = [
         : "Buy a 6th Antimatter Dimension.";
     },
     checkEvent: GAME_EVENT.ACHIEVEMENT_EVENT_OTHER,
+    get reward() {
+      return `
+    5th Antimatter Dimensions obtains a multiplier that
+    decreases with an infinite number of increases.
+    `;
+    },
+    effect: () => new Decimal(0.95).pow(Currency.infinitiesTotal.value).times(12).max(1),
+    formatEffect: value => `${formatX(value, 2, 2)}`
   },
   {
     id: 17,
     name: "Not a luck related achievement",
     description: "Buy a 7th Antimatter Dimension.",
     checkEvent: GAME_EVENT.ACHIEVEMENT_EVENT_OTHER,
+    get reward() {
+      return `
+    6th Antimatter Dimensions obtains a multiplier that
+    decreases with an infinite number of increases.
+    `;
+    },
+    effect: () => new Decimal(0.95).pow(Currency.infinitiesTotal.value).times(12).max(1),
+    formatEffect: value => `${formatX(value, 2, 2)}`
   },
   {
     id: 18,
@@ -56,6 +106,14 @@ export const normalAchievements = [
         : "Buy an 8th Antimatter Dimension.";
     },
     checkEvent: GAME_EVENT.ACHIEVEMENT_EVENT_OTHER,
+    get reward() {
+      return `
+    7th Antimatter Dimensions obtains a multiplier that
+    decreases with an infinite number of increases.
+    `;
+    },
+    effect: () => new Decimal(0.95).pow(Currency.infinitiesTotal.value).times(12).max(1),
+    formatEffect: value => `${formatX(value, 2, 2)}`
   },
   {
     id: 21,
@@ -78,8 +136,8 @@ export const normalAchievements = [
     name: "The 9th Dimension is a lie",
     get description() { return `Have exactly ${formatInt(99)} 8th Antimatter Dimensions.`; },
     checkRequirement: () => AntimatterDimension(8).amount.eq(99),
-    get reward() { return `8th Antimatter Dimensions are ${formatPercents(0.1)} stronger.`; },
-    effect: 1.1
+    get reward() { return `8th Antimatter Dimensions are ${formatPercents(0.099)} stronger.`; },
+    effect: 1.099
   },
   {
     id: 24,
@@ -100,7 +158,15 @@ export const normalAchievements = [
     name: "You got past The Big Wall",
     description: "Buy an Antimatter Galaxy.",
     checkRequirement: () => true,
-    checkEvent: GAME_EVENT.GALAXY_RESET_BEFORE
+    checkEvent: GAME_EVENT.GALAXY_RESET_BEFORE,
+    get reward() {
+      return `
+    8th Antimatter Dimensions obtains a multiplier that
+    decreases with an infinite number of increases.
+    `;
+    },
+    effect: () => new Decimal(0.95).pow(Currency.infinitiesTotal.value).times(12).max(1),
+    formatEffect: value => `${formatX(value, 2, 2)}`
   },
   {
     id: 27,
@@ -183,8 +249,8 @@ export const normalAchievements = [
   {
     id: 37,
     name: "That's FAST!",
-    get description() { return `Infinity in under ${formatInt(2)} hours.`; },
-    checkRequirement: () => Time.thisInfinityRealTime.totalHours <= 2,
+    get description() { return `Infinity in under ${formatInt(1)} hour.`; },
+    checkRequirement: () => Time.thisInfinityRealTime.totalHours <= 1,
     checkEvent: GAME_EVENT.BIG_CRUNCH_BEFORE,
     get reward() { return `Start with ${formatInt(5000)} antimatter.`; },
     effect: 5000

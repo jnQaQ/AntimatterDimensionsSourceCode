@@ -341,7 +341,7 @@ window.player = {
     },
   },
   speedrun: {
-    isUnlocked: false,
+    isUnlocked: true,
     isActive: false,
     isSegmented: false,
     usedSTD: false,
