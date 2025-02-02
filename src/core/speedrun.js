@@ -82,6 +82,7 @@ export const Speedrun = {
     // timewalls for particularly fast/optimized runs
     Achievement(22).unlock();
     Achievement(35).unlock();
+    Achievement(43).unlock();
     Achievement(76).unlock();
 
     // Some time elapses after the reset and before the UI is actually ready, which ends up getting "counted" as offline

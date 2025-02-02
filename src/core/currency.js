@@ -237,7 +237,7 @@ Currency.antimatter = new class extends DecimalCurrency {
       10,
       Perk.startAM,
       Achievement(21),
-      Achievement(37),
+      Achievement(37).effects.startAm,
       Achievement(54),
       Achievement(55),
       Achievement(78)

@@ -44,7 +44,7 @@ export default {
     :class="classObject"
     @click="upgradeInterval"
   >
-    {{ formatPercents(0.4) }} smaller interval
+    {{ formatPercents(0.55) }} smaller interval
     <br>
     Cost: {{ format(cost, 2) }} IP
   </button>

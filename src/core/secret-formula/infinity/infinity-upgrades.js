@@ -131,8 +131,8 @@ export const infinityUpgrades = {
     id: "unspentBonus",
     cost: 5,
     checkRequirement: () => InfinityUpgrade.thisInfinityTimeMult.isBought,
-    description: "Multiplier to 1st Antimatter Dimension based on unspent Infinity Points",
-    effect: () => Currency.infinityPoints.value.dividedBy(2).pow(1.5).plus(1),
+    description: "Multiplier to 1st Antimatter Dimension based on max Infinity Points in this Eternity.",
+    effect: () => player.records.thisEternity.maxIP.dividedBy(2).pow(1.5).plus(1),
     formatEffect: value => formatX(value, 2, 2),
     charged: {
       description: "Multiplier to 1st Antimatter Dimension based on unspent Infinity Points, powered by Teresa level",
@@ -157,14 +157,14 @@ export const infinityUpgrades = {
     id: "passiveGen",
     cost: 10,
     checkRequirement: () => InfinityUpgrade.dimboostMult.isBought,
-    description: () => `Passively generate Infinity Points ${formatInt(10)} times slower than your fastest Infinity`,
+    description: () => `Passively generate Infinity Points ${formatFloat(1.5)} times slower than your fastest Infinity`,
     // Cutting corners: this is not actual effect, but it is totalIPMult that is displyed on upgrade
     effect: () => (Teresa.isRunning || V.isRunning || Pelle.isDoomed ? DC.D0 : GameCache.totalIPMult.value),
     formatEffect: value => {
       if (Teresa.isRunning || V.isRunning) return "Disabled in this reality";
       if (Pelle.isDoomed) return "Disabled";
       if (player.records.bestInfinity.time >= 999999999999) return "Too slow to generate";
-      return `${format(value, 2)} every ${Time.bestInfinity.times(10).toStringShort()}`;
+      return `${format(value, 2)} every ${Time.bestInfinity.times(1.5).toStringShort()}`;
     },
     charged: {
       description: () =>
@@ -183,21 +183,21 @@ export const infinityUpgrades = {
   },
   skipReset2: {
     id: "skipReset2",
-    cost: 40,
+    cost: 30,
     checkRequirement: () => InfinityUpgrade.skipReset1.isBought,
     description: () =>
       `Start every reset with ${formatInt(2)} Dimension Boosts, automatically unlocking the 6th Antimatter Dimension`,
   },
   skipReset3: {
     id: "skipReset3",
-    cost: 80,
+    cost: 60,
     checkRequirement: () => InfinityUpgrade.skipReset2.isBought,
     description: () =>
       `Start every reset with ${formatInt(3)} Dimension Boosts, automatically unlocking the 7th Antimatter Dimension`,
   },
   skipResetGalaxy: {
     id: "skipResetGalaxy",
-    cost: 300,
+    cost: 120,
     checkRequirement: () => InfinityUpgrade.skipReset3.isBought,
     description: () =>
       `Start every reset with ${formatInt(4)} Dimension Boosts, automatically unlocking the 8th Antimatter Dimension;
@@ -223,7 +223,7 @@ export const infinityUpgrades = {
     costCap: DC.E6E6,
     costIncreaseThreshold: DC.E3E6,
     description: () => `Multiply Infinity Points from all sources by ${formatX(2)}`,
-    // Normally the multiplier caps at e993k or so with 3300000 purchases, but if the cost is capped then we just give
+    // Normally the multiplier caps at e993k or so with 3300000 purchases, but if the cost is capped then we just giveccccc
     // an extra e7k to make the multiplier look nice
     effect: () => (player.IPMultPurchases >= 3300000 ? DC.E1E6 : DC.D2.pow(player.IPMultPurchases)),
     cap: () => Effarig.eternityCap ?? DC.E1E6,

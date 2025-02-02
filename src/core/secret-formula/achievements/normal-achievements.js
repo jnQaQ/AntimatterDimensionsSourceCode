@@ -252,8 +252,13 @@ export const normalAchievements = [
     get description() { return `Infinity in under ${formatInt(1)} hour.`; },
     checkRequirement: () => Time.thisInfinityRealTime.totalHours <= 1,
     checkEvent: GAME_EVENT.BIG_CRUNCH_BEFORE,
-    get reward() { return `Start with ${formatInt(5000)} antimatter.`; },
-    effect: 5000
+    get reward() { return `Start with ${formatInt(5000)} antimatter and Obtain an infinite point multiplier that continuously decreases with infinities.`; },
+    effects:
+      {
+        startAm : 5000,
+        ipGain : value => new Decimal(0.95).pow(Currency.infinitiesTotal.value).times(6).max(1)
+      },
+    formatEffect: value => `${formatX(value, 2, 2)}`
   },
   {
     id: 38,

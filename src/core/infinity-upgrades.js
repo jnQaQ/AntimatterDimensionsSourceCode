@@ -92,6 +92,7 @@ export function totalIPMult() {
       TimeStudy(141),
       TimeStudy(142),
       TimeStudy(143),
+      Achievement(37).effects.ipGain,
       Achievement(85),
       Achievement(93),
       Achievement(116),

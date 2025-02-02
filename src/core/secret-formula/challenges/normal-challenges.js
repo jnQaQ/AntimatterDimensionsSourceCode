@@ -87,7 +87,8 @@ export const normalChallenges = [
     legacyId: 11,
     isQuickResettable: false,
     description: `Dimension Boosts provide no multiplier and Antimatter Galaxies cannot be bought. Dimensional
-      Sacrifice resets antimatter and all Antimatter Dimensions, but also gives a significantly stronger multiplier.`,
+      Sacrifice resets antimatter and all Antimatter Dimensions, but also gives a significantly stronger multiplier.
+      \n(Try completing me first to farm IP!)`,
     name: "8th Antimatter Dimension Autobuyer",
     reward: "Upgradeable 8th Antimatter Dimension Autobuyer",
     lockedAt: DC.D0,
