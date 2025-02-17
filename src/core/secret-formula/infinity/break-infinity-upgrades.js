@@ -56,14 +56,14 @@ export const breakInfinityUpgrades = {
   },
   achievementMult: {
     id: "achievementMult",
-    cost: 1e6,
+    cost: 2e5,
     description: "Antimatter Dimensions gain a multiplier based on Achievements completed",
     effect: () => Math.max(Math.pow((Achievements.effectiveCount - 30), 3) / 40, 1),
     formatEffect: value => formatX(value, 2, 2)
   },
   slowestChallengeMult: {
     id: "challengeMult",
-    cost: 1e7,
+    cost: 4e5,
     description: "Antimatter Dimensions gain a multiplier based on how fast your slowest challenge run is",
     effect: () => Decimal.clampMin(50 / Time.worstChallenge.totalMinutes, 1),
     formatEffect: value => formatX(value, 2, 2),
@@ -72,7 +72,7 @@ export const breakInfinityUpgrades = {
   },
   infinitiedGen: {
     id: "infinitiedGeneration",
-    cost: 2e7,
+    cost: 8e5,
     description: "Passively generate Infinities based on your fastest Infinity",
     effect: () => player.records.bestInfinity.time,
     formatEffect: value => {
@@ -92,7 +92,7 @@ export const breakInfinityUpgrades = {
   },
   autobuyMaxDimboosts: {
     id: "autobuyMaxDimboosts",
-    cost: 5e9,
+    cost: 1e6,
     description: "Unlock the buy max Dimension Boost Autobuyer mode"
   },
   autobuyerSpeed: {

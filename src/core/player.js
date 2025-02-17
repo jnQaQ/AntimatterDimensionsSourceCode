@@ -20,7 +20,7 @@ window.player = {
       isUnlocked: false,
       bought: 0,
       amount: DC.D0,
-      cost: [DC.E8, DC.E9, DC.E10, DC.E20, DC.E140, DC.E200, DC.E250, DC.E280][tier],
+      cost: [DC.E6, DC.E8, DC.E10, DC.E20, DC.E140, DC.E200, DC.E250, DC.E280][tier],
       baseAmount: 0
     })),
     time: Array.range(0, 8).map(tier => ({
