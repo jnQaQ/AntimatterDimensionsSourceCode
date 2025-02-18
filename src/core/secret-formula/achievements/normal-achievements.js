@@ -20,7 +20,7 @@ export const normalAchievements = [
     decreases with an infinite number of increases.
     `;
     },
-    effect: () => new Decimal(0.95).pow(Currency.infinitiesTotal.value).times(12).max(1),
+    effect: () => new Decimal(0.98).pow(Currency.infinitiesTotal.value).times(12).max(1),
     formatEffect: value => `${formatX(value, 2, 2)}`
   },
   {
@@ -34,7 +34,7 @@ export const normalAchievements = [
     decreases with an infinite number of increases.
     `;
     },
-    effect: () => new Decimal(0.95).pow(Currency.infinitiesTotal.value).times(12).max(1),
+    effect: () => new Decimal(0.98).pow(Currency.infinitiesTotal.value).times(12).max(1),
     formatEffect: value => `${formatX(value, 2, 2)}`
   },
   {
@@ -48,7 +48,7 @@ export const normalAchievements = [
     decreases with an infinite number of increases.
     `;
     },
-    effect: () => new Decimal(0.95).pow(Currency.infinitiesTotal.value).times(12).max(1),
+    effect: () => new Decimal(0.98).pow(Currency.infinitiesTotal.value).times(12).max(1),
     formatEffect: value => `${formatX(value, 2, 2)}`
   },
   {
@@ -62,7 +62,7 @@ export const normalAchievements = [
     decreases with an infinite number of increases.
     `;
     },
-    effect: () => new Decimal(0.95).pow(Currency.infinitiesTotal.value).times(12).max(1),
+    effect: () => new Decimal(0.98).pow(Currency.infinitiesTotal.value).times(12).max(1),
     formatEffect: value => `${formatX(value, 2, 2)}`
   },
   {
@@ -80,7 +80,7 @@ export const normalAchievements = [
     decreases with an infinite number of increases.
     `;
     },
-    effect: () => new Decimal(0.95).pow(Currency.infinitiesTotal.value).times(12).max(1),
+    effect: () => new Decimal(0.98).pow(Currency.infinitiesTotal.value).times(12).max(1),
     formatEffect: value => `${formatX(value, 2, 2)}`
   },
   {
@@ -94,7 +94,7 @@ export const normalAchievements = [
     decreases with an infinite number of increases.
     `;
     },
-    effect: () => new Decimal(0.95).pow(Currency.infinitiesTotal.value).times(12).max(1),
+    effect: () => new Decimal(0.98).pow(Currency.infinitiesTotal.value).times(12).max(1),
     formatEffect: value => `${formatX(value, 2, 2)}`
   },
   {
@@ -112,7 +112,7 @@ export const normalAchievements = [
     decreases with an infinite number of increases.
     `;
     },
-    effect: () => new Decimal(0.95).pow(Currency.infinitiesTotal.value).times(12).max(1),
+    effect: () => new Decimal(0.98).pow(Currency.infinitiesTotal.value).times(12).max(1),
     formatEffect: value => `${formatX(value, 2, 2)}`
   },
   {
@@ -165,7 +165,7 @@ export const normalAchievements = [
     decreases with an infinite number of increases.
     `;
     },
-    effect: () => new Decimal(0.95).pow(Currency.infinitiesTotal.value).times(12).max(1),
+    effect: () => new Decimal(0.98).pow(Currency.infinitiesTotal.value).times(12).max(1),
     formatEffect: value => `${formatX(value, 2, 2)}`
   },
   {
@@ -255,8 +255,8 @@ export const normalAchievements = [
     get reward() { return `Start with ${formatInt(5000)} antimatter and Obtain an infinite point multiplier that continuously decreases with infinities.`; },
     effects:
       {
-        startAm : 5000,
-        ipGain : value => new Decimal(0.95).pow(Currency.infinitiesTotal.value).times(6).max(1)
+        startAm: 5000,
+        ipGain: value => new Decimal(0.97).pow(Currency.infinitiesTotal.value).times(6).max(1)
       },
     formatEffect: value => `${formatX(value, 2, 2)}`
   },
